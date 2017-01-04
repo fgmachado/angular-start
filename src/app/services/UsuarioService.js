@@ -13,7 +13,7 @@
         };
 
         function consultar(sucesso, erro) {
-            return $baseService.post($appConfig.api + 'usuario', sucesso, erro, { action: 'profile', data: 173 });
+            return $baseService.post($appConfig.api + 'usuario', sucesso, erro);
         };
     }
 }());
