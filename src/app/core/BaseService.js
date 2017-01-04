@@ -5,20 +5,20 @@
         .module('angularStart.core')
         .service('BaseService', baseService);
 
-    baseService.$inject = ['$http'];
+    baseService.$inject = ['$http', 'ActionService'];
 
-    function baseService($http) {
+    function baseService($http, $actionService) {
         return {
             get: get,
             post: post
         };
 
         function get(url, success, error, data) {
-            return new Action('POST', url, success, error, data);
+            return $actionService.getInstance('GET', url, success, error, data);
         };
 
         function post(url, success, error, data) {
-            return new Action('POST', url, success, error, data);
+            return $actionService.getInstance('POST', url, success, error, data);
         };
     }
 }());

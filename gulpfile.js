@@ -58,7 +58,7 @@
 
         var target = gulp.src('./www/index.html');
         var sources = gulp.src(scripts, { read: false });
-        return target.pipe(inject(sources)).pipe(gulp.dest('./www'));
+        return target.pipe(inject(sources), {relative: true}).pipe(gulp.dest('./www'));
     });
 
     gulp.task('build', ['vendorjs', 'vendorcss', 'vendorfonts', 'appjs', 'inject']);
