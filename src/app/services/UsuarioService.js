@@ -1,19 +1,15 @@
-(function () {
-    'use strict';
+angular
+    .module(module.services)
+    .service('UsuarioService', UsuarioService);
 
-    angular
-        .module('angularStart.services')
-        .service('UsuarioService', UsuarioService);
+UsuarioService.$inject = ['BaseService', 'AppConfig'];
 
-    UsuarioService.$inject = ['BaseService', 'AppConfig'];
+function UsuarioService($baseService, $appConfig) {
+    return {
+        consultar: consultar
+    };
 
-    function UsuarioService($baseService, $appConfig) {
-        return {
-            consultar: consultar
-        };
-
-        function consultar(sucesso, erro) {
-            return $baseService.post($appConfig.api + 'usuario', sucesso, erro);
-        };
-    }
-}());
+    function consultar(sucesso, erro) {
+        return $baseService.post($appConfig.api + 'usuario', sucesso, erro);
+    };
+};

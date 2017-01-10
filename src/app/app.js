@@ -1,14 +1,10 @@
-(function () {
-    'use strict';
+var dependencies = [
+    'ngRoute',
+    module.core,
+    module.components,
+    module.controllers,
+    module.services
+];
 
-    var dependencies = [
-        'ngRoute',
-        'angularStart.core',
-        'angularStart.components',
-        'angularStart.controllers',
-        'angularStart.services'
-    ];
-
-    angular
-        .module('angularStart', dependencies);
-}());
+angular
+    .module(module.main, dependencies);

@@ -1,17 +1,13 @@
-(function () {
-    'use strict';
+angular
+    .module(module.main)
+    .config(config);
 
-    angular
-        .module('angularStart')
-        .config(config);
+config.$inject = ['$routeProvider', '$locationProvider', 'AppConfig'];
 
-    config.$inject = ['$routeProvider', '$locationProvider', 'AppConfig'];
+function config($routeProvider, $locationProvider, App) {
+    $locationProvider.html5Mode(false);
 
-    function config($routeProvider, $locationProvider, App) {
-        $locationProvider.html5Mode(false);
-
-        $routeProvider
-            .when('/', new Route('HomeController', App.views + 'home/index.html', 'vm'))
-            .otherwise({ redirect: '/' });
-    };  
-}());
+    $routeProvider
+        .when('/', new Route('HomeController', App.views + 'home/index.html', 'vm'))
+        .otherwise({ redirect: '/' });
+};  

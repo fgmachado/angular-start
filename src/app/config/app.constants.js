@@ -1,12 +1,9 @@
-(function () {
-    'use strict';
+var app = {
+    'rootUrl': "http://localhost:8080/angularstart/",
+    'api': 'http://localhost:8080/api/',
+    'views': 'views/'
+};
 
-    var app = {
-        'api': 'http://localhost/api/',
-        'views': 'views/'
-    };
-
-    angular
-        .module('angularStart')
-        .constant('AppConfig', app);
-}());
+angular
+    .module(module.main)
+    .constant('AppConfig', app);

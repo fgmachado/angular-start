@@ -1,15 +1,11 @@
-(function () {
-    'use strict';
+angular
+    .module(module.core, []);
 
-    angular
-        .module('angularStart.core', []);
+angular
+    .module(module.components, []);
 
-    angular
-        .module('angularStart.components', []);
+angular
+    .module(module.controllers, []);
 
-    angular
-        .module('angularStart.controllers', []);
-
-    angular
-        .module('angularStart.services', []);
-}());
+angular
+    .module(module.services, []);
